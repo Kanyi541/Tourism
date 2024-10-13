@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mountain Adventure Booking</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e9ecef;
+            color: #212529;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: #ffcc00;
+        }
+
+        .left-section h2,
+        .right-section h2 {
+            color: #007bff;
+        }
+
+        .footer {
+            background-color: #343a40;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer button {
+            background-color: #ffcc00;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .footer a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .icon {
+            font-size: 30px;
+            color: #007bff;
+        }
+
+        .img-fluid {
+            border-radius: 10px;
+        }
+
+        .intro-img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .text-danger {
+            color: red;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>Welcome to Your Next Adventure!</h1>
+            <img src="https://via.placeholder.com/1200x400?text=Mountain+Adventure" alt="Mountain Adventure" class="intro-img">
+            <p>Experience the thrill of the mountains with our exclusive tours.</p>
+        </div>
+        <div class="row">
+            <div class="col-md-6 left-section">
+                <h2><i class="fas fa-mountain icon"></i> Ready to Book Your Dream Trip?</h2>
+                <p>If you're looking for an unforgettable experience in the majestic mountains, you're in the right place! Feel free to reach out for any inquiries or to start planning your journey.</p>
+                <p>For any further information or to receive a quote, contact our adventure specialist,////////, at:</p>
+                <p class="font-weight-bold">123example@gmail.com</p>
+
+                <h3>To Request a Quotation:</h3>
+                <p>Please provide us with the following details to help us craft your perfect itinerary:</p>
+                <ul>
+                    <li><i class="fas fa-user icon"></i> Names of all group members</li>
+                    <li><i class="fas fa-child icon"></i> Ages of each person</li>
+                    <li><i class="fas fa-venus-mars icon"></i> Gender</li>
+                    <li><i class="fas fa-heartbeat icon"></i> Fitness Level (very fit, reasonably fit, not great)</li>
+                    <li><i class="fas fa-calendar-alt icon"></i> Preferred travel dates</li>
+                    <li><i class="fas fa-safari icon"></i> Combination of trips (Mountain with/without a Safari)</li>
+                    <li><i class="fas fa-hotel icon"></i> Any additional experiences (e.g., overnight in a village, a few days on the beach)</li>
+                    <li><i class="fas fa-building icon"></i> Request for accommodation bookings in Nairobi</li>
+                    <li><i class="fas fa-money-bill-wave icon"></i> Preferred currency for the quote</li>
+                </ul>
+                <label for="name">Your Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                <label for="subject">Subject</label>
+                <input type="text" class="form-control" id="subject" placeholder="Enter the subject" required>
+                <label for="message">Your Message</label>
+                <textarea class="form-control" id="message" rows="5" placeholder="Type your message here..." required></textarea>
+            </div>
+
+            <div class="col-md-6 right-section">
+                <h2><i class="fas fa-book icon"></i> Simple Booking Form</h2>
+                <form action="/submit" method="POST">
+                    <div class="form-group">
+                        <label for="your-name">Your Name <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="your-name" name="your-name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Your Email <span class="text-danger">*</span></label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Your Phone Number <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="phone" name="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Your Choice of Tour:</label>
+                        <div class="form-row">
+                            <div class="form-check col-md-4">
+                                <input class="form-check-input" type="checkbox" name="tour" value="Climbing Tour" id="climbingTour">
+                                <label class="form-check-label" for="climbingTour">Climbing Tour</label>
+                            </div>
+                            <div class="form-check col-md-4">
+                                <input class="form-check-input" type="checkbox" name="tour" value="Safari" id="safari">
+                                <label class="form-check-label" for="safari">Safari</label>
+                            </div>
+                            <div class="form-check col-md-4">
+                                <input class="form-check-input" type="checkbox" name="tour" value="Both" id="both">
+                                <label class="form-check-label" for="both">Both</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <div class="form-group">
+                        <label for="guests">Number of Guests <span class="text-danger">*</span></label>
+                        <input type="number" class="form-control" id="guests" name="guests" min="1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="checkin">Check-in Date <span class="text-danger">*</span></label>
+                        <input type="date" class="form-control" id="checkin" name="checkin" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkout">Check-out Date</label>
+                        <input type="date" class="form-control" id="checkout" name="checkout">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="subject" name="subject" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Message <span class="text-danger">*</span></label>
+                        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="consent" required>
+                        <label class="form-check-label">I consent to my data being stored temporarily <span class="text-danger">*</span></label>
+                    </div>
+
+                    <input type="submit" class="btn btn-warning btn-block mt-3" value="Submit">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>This website uses cookies to enhance your experience. By using our site, you agree to our use of cookies.</p>
+        <button>Accept</button>
+        <a href="#">Read our Privacy Policy</a>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

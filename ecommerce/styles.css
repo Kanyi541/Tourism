@@ -1,0 +1,1154 @@
+@import url("https://fonts.googleapis.com/css2?family=Lisu+Bosa:wght@600;800&family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --primary-color: #0a0d14;
+  --primary-color-light: #20242f;
+  --secondary-color: #f49e09;
+  --extra-light: rgba(255, 255, 255, 0.5);
+  --white: #ffffff;
+  --max-width: 1200px;
+  --header-font: "Lisu Bosa", serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.section__container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 5rem 1rem;
+}
+
+.section__header {
+  margin-bottom: 2rem;
+  font-size: 3rem;
+  font-weight: 800;
+  font-family: var(--header-font);
+  text-align: center;
+}
+
+.section__subheader {
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  cursor: pointer;
+}
+
+img {
+  width: 100%;
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--white);
+  background-color: var(--primary-color);
+}
+
+header {
+  background-image: linear-gradient(to top, var(--primary-color), transparent), url("Assets/images/kenya.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+nav {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid var(--extra-light);
+}
+
+.nav__bar {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 1.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.nav__logo a {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.link a {
+  padding: 1.5rem 5px;
+  font-weight: 500;
+  color: var(--white);
+  transition: 0.3s;
+}
+
+.link a:hover {
+  color: var(--secondary-color);
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+.link {
+  position: relative; /* Position relative to contain the dropdown */
+}
+
+.link .dropdown {
+  display: none; /* Hide the dropdown by default */
+  position: absolute; /* Position it absolutely */
+  background-color: rgba(20, 11, 11, 0.37); /* Background color of the dropdown */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
+  z-index: 1; /* Ensure dropdown appears above other content */
+}
+
+.link:hover .dropdown {
+  display: block; /* Show dropdown on hover */
+}
+
+.dropdown li a {
+  padding: 10px 20px; /* Add some padding */
+  text-decoration: none; /* Remove underline from links */
+  color: #333; /* Link color */
+  display: block; /* Make the entire area clickable */
+}
+.dropdown li a {
+  text-decoration: none; /* Remove underline from links */
+  color: White; /* Link color */
+}
+
+
+.link span {
+  padding: 1rem 0;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.header__container {
+  padding: 12rem 1rem;
+}
+
+.header__container h1 {
+  margin-bottom: 1rem;
+  max-width: 700px;
+  font-size: 4rem;
+  font-family: var(--header-font);
+}
+
+.header__container h4 {
+  position: relative;
+  margin-left: 3rem;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.header__container h4::after {
+  position: absolute;
+  content: "";
+  left: -3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 2px;
+  width: 2rem;
+  background-color: var(--white);
+}
+
+.about__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.about__container :is(.section__header, .section__subheader) {
+  text-align: left;
+}
+
+.about__flex {
+  margin: 2rem 0;
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  background-color: var(--primary-color-light);
+}
+
+.about__card {
+  flex: 1 1 150px;
+  text-align: center;
+  border-right: 2px solid var(--primary-color);
+}
+
+.about__card:last-child {
+  border: none;
+}
+
+.about__card h4 {
+  margin-bottom: 5px;
+  font-size: 3rem;
+  font-weight: 600;
+  font-family: var(--header-font);
+}
+
+.about__card p {
+  font-size: 0.9rem;
+}
+
+.about__image img {
+  max-width: 450px;
+  margin: auto;
+}
+
+.discover {
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.05), transparent);
+}
+
+.discover__grid {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.discover__card {
+  max-width: 320px;
+  margin: auto;
+}
+
+.discover__card:nth-child(2) {
+  transform: translateY(5rem);
+}
+
+.discover__image {
+  position: relative;
+  background-image: url('your-image-path.jpg'); /* Replace with the path to your image */
+  background-size: cover;
+  background-position: center;
+}
+
+.discover__image::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 50%;
+  left: 0;
+  bottom: 0;
+  background-image: linear-gradient(to top, var(--primary-color), transparent);
+}
+
+.discover__card__content {
+  padding: 0 2rem;
+  transform: translateY(-50%);
+}
+
+.discover__card__content h4 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 800;
+  font-family: var(--header-font);
+  color: var(--secondary-color);
+}
+
+.discover__card__content p {
+  margin-bottom: 2rem;
+}
+
+.discover__btn {
+  padding: 0.75rem 1rem;
+  outline: none;
+  font-size: 1rem;
+  color: var(--white);
+  background-color: transparent;
+  border: 1px solid var(--white);
+  cursor: pointer;
+}
+
+.blogs__container {
+  padding: 5rem 0;
+}
+
+.blogs__grid {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.blogs__card {
+  position: relative;
+}
+
+.blogs__card::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-image: linear-gradient(to top, var(--primary-color), transparent);
+}
+
+.blogs__content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  z-index: 1;
+}
+
+.journals__grid {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.journals__content {
+  padding: 2rem;
+  background-color: var(--primary-color-light);
+}
+
+.journals__author {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.journals__author img {
+  max-width: 30px;
+  border-radius: 100%;
+}
+
+.journals__author p {
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
+
+.journals__content h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.journals__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.journals__footer p {
+  font-size: 0.8rem;
+}
+
+.footer {
+  padding: 2rem 0;
+  background-color: var(--primary-color);
+}
+
+.footer p {
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.footer a {
+  color: var(--secondary-color);
+  transition: 0.3s;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .header__container h1 {
+    font-size: 3.5rem;
+  }
+
+  .section__header {
+    font-size: 2.5rem;
+  }
+
+  .section__subheader {
+    max-width: 500px;
+  }
+
+  .discover__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .blogs__grid,
+  .journals__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about__container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .header__container h1 {
+    font-size: 3rem;
+  }
+
+  .header__container h4 {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+  }
+
+  .discover__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .blogs__grid,
+  .journals__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+@import url("https://fonts.googleapis.com/css2?family=Lisu+Bosa:wght@600;800&family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --primary-color: #0a0d14;
+  --primary-color-light: #20242f;
+  --secondary-color: #f49e09;
+  --extra-light: rgba(255, 255, 255, 0.5);
+  --white: #ffffff;
+  --max-width: 1200px;
+  --header-font: "Lisu Bosa", serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.section__container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 5rem 1rem;
+}
+
+.section__header {
+  margin-bottom: 2rem;
+  font-size: 3rem;
+  font-weight: 800;
+  font-family: var(--header-font);
+  text-align: center;
+}
+
+.section__subheader {
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  cursor: pointer;
+}
+
+img {
+  width: 100%;
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--white);
+  background-color: var(--primary-color);
+}
+
+header {
+  background-image: linear-gradient(to top, var(--primary-color), transparent), url("Assets/images/kenya.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+nav {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid var(--extra-light);
+}
+
+.nav__bar {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 1.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.nav__logo a {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.link a {
+  padding: 1.5rem 5px;
+  font-weight: 500;
+  color: var(--white);
+  transition: 0.3s;
+}
+
+.link a:hover {
+  color: var(--secondary-color);
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+.link {
+  position: relative; /* Position relative to contain the dropdown */
+}
+
+.link .dropdown {
+  display: none; /* Hide the dropdown by default */
+  position: absolute; /* Position it absolutely */
+  background-color: rgba(20, 11, 11, 0.37); /* Background color of the dropdown */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
+  z-index: 1; /* Ensure dropdown appears above other content */
+}
+
+.link:hover .dropdown {
+  display: block; /* Show dropdown on hover */
+}
+
+.dropdown li a {
+  padding: 10px 20px; /* Add some padding */
+  text-decoration: none; /* Remove underline from links */
+  color: #333; /* Link color */
+  display: block; /* Make the entire area clickable */
+}
+.dropdown li a {
+  text-decoration: none; /* Remove underline from links */
+  color: White; /* Link color */
+}
+
+.dropdown li a:hover {
+  
+}
+
+.link span {
+  padding: 1rem 0;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.header__container {
+  padding: 12rem 1rem;
+}
+
+.header__container h1 {
+  margin-bottom: 1rem;
+  max-width: 700px;
+  font-size: 4rem;
+  font-family: var(--header-font);
+}
+
+.header__container h4 {
+  position: relative;
+  margin-left: 3rem;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.header__container h4::after {
+  position: absolute;
+  content: "";
+  left: -3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 2px;
+  width: 2rem;
+  background-color: var(--white);
+}
+
+.about__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.about__container :is(.section__header, .section__subheader) {
+  text-align: left;
+}
+
+.about__flex {
+  margin: 2rem 0;
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  background-color: var(--primary-color-light);
+}
+
+.about__card {
+  flex: 1 1 150px;
+  text-align: center;
+  border-right: 2px solid var(--primary-color);
+}
+
+.about__card:last-child {
+  border: none;
+}
+
+.about__card h4 {
+  margin-bottom: 5px;
+  font-size: 3rem;
+  font-weight: 600;
+  font-family: var(--header-font);
+}
+
+.about__card p {
+  font-size: 0.9rem;
+}
+
+.about__image img {
+  max-width: 450px;
+  margin: auto;
+}
+
+.discover {
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.05), transparent);
+}
+
+.discover__grid {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.discover__card {
+  max-width: 320px;
+  margin: auto;
+}
+
+.discover__card:nth-child(2) {
+  transform: translateY(5rem);
+}
+
+.discover__image {
+  position: relative;
+  background-image: url('your-image-path.jpg'); /* Replace with the path to your image */
+  background-size: cover;
+  background-position: center;
+}
+
+.discover__image::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 50%;
+  left: 0;
+  bottom: 0;
+  background-image: linear-gradient(to top, var(--primary-color), transparent);
+}
+
+.discover__card__content {
+  padding: 0 2rem;
+  transform: translateY(-50%);
+}
+
+.discover__card__content h4 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 800;
+  font-family: var(--header-font);
+  color: var(--secondary-color);
+}
+
+.discover__card__content p {
+  margin-bottom: 2rem;
+}
+
+.discover__btn {
+  padding: 0.75rem 1rem;
+  outline: none;
+  font-size: 1rem;
+  color: var(--white);
+  background-color: transparent;
+  border: 1px solid var(--white);
+  cursor: pointer;
+}
+
+.blogs__container {
+  padding: 5rem 0;
+}
+
+.blogs__grid {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.blogs__card {
+  position: relative;
+}
+
+.blogs__card::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-image: linear-gradient(to top, var(--primary-color), transparent);
+}
+
+.blogs__content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  z-index: 1;
+}
+
+.journals__grid {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.journals__content {
+  padding: 2rem;
+  background-color: var(--primary-color-light);
+}
+
+.journals__author {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.journals__author img {
+  max-width: 30px;
+  border-radius: 100%;
+}
+
+.journals__author p {
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
+
+.journals__content h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.journals__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.journals__footer p {
+  font-size: 0.8rem;
+}
+
+.footer {
+  padding: 2rem 0;
+  background-color: var(--primary-color);
+}
+
+.footer p {
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.footer a {
+  color: var(--secondary-color);
+  transition: 0.3s;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .header__container h1 {
+    font-size: 3.5rem;
+  }
+
+  .section__header {
+    font-size: 2.5rem;
+  }
+
+  .section__subheader {
+    max-width: 500px;
+  }
+
+  .discover__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .blogs__grid,
+  .journals__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about__container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .header__container h1 {
+    font-size: 3rem;
+  }
+
+  .header__container h4 {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+  }
+
+  .discover__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .blogs__grid,
+  .journals__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+/* Camping Section Styles */
+.camping {
+  padding: 50px 20px; /* Space around the section */
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.05), transparent);
+}
+
+.camping__container {
+  max-width: 1200px; /* Limit width for better readability */
+  margin: 0 auto; /* Center the container */
+  text-align: center; /* Center text for a unified look */
+}
+
+.section__header {
+  font-size: 2.5rem; /* Larger font for the header */
+  color: #2c3e50; /* Dark color for the header */
+  margin-bottom: 10px; /* Space below header */
+}
+
+.section__subheader {
+  font-size: 1.2rem; /* Subheader size */
+  color: #34495e; /* Slightly lighter color for contrast */
+  margin-bottom: 40px; /* Space below subheader */
+}
+
+.camping__grid {
+  display: grid; /* Use grid layout for cards */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Space between cards */
+}
+
+.camping__card {
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.05), transparent);
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  overflow: hidden; /* Prevent overflow of content */
+  transition: transform 0.3s; /* Smooth transition for hover effects */
+}
+
+.camping__card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.camping__image img {
+  width: 100%; /* Image covers the full width */
+  height: auto; /* Maintain aspect ratio */
+  border-bottom: 4px solid #2c3e50; /* Decorative border below the image */
+}
+
+.camping__card__content {
+  padding: 20px; /* Padding inside the card */
+}
+
+.camping__card__content h4 {
+  font-size: 1.5rem; /* Font size for the card title */
+  color: #2c3e50; /* Dark color for contrast */
+  margin: 10px 0; /* Space above and below the title */
+}
+
+.camping__card__content p {
+  font-size: 1rem; /* Standard font size for text */
+  color: #555; /* Grey color for text */
+  margin-bottom: 20px; /* Space below the paragraph */
+}
+
+.camping__btn {
+  background-color: #2c3e50; /* Dark background for button */
+  color: #fff; /* White text for button */
+  border: none; /* Remove default border */
+  border-radius: 4px; /* Rounded button corners */
+  padding: 10px 20px; /* Padding inside the button */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth background change */
+}
+
+.camping__btn:hover {
+  background-color: #1a242f; /* Darker color on hover */
+}
+/* Gallery Section Styles */
+.gallery {
+  padding: 50px 20px; /* Space around the section */
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.05), transparent);
+}
+
+.gallery__container {
+  max-width: 1200px; /* Limit width for better readability */
+  margin: 0 auto; /* Center the container */
+  text-align: center; /* Center text for a unified look */
+}
+
+.section__header {
+  font-size: 2.5rem; /* Larger font for the header */
+  color: #2c3e50; /* Dark color for the header */
+  margin-bottom: 10px; /* Space below header */
+}
+
+.section__subheader {
+  font-size: 1.2rem; /* Subheader size */
+  color: #34495e; /* Slightly lighter color for contrast */
+  margin-bottom: 40px; /* Space below subheader */
+}
+
+.gallery__grid {
+  display: grid; /* Use grid layout for cards */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Space between cards */
+}
+
+.gallery__card {
+  position: relative; /* Set position for absolute children */
+  background-color: #fff; /* White background for cards */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  overflow: hidden; /* Prevent overflow of content */
+  transition: transform 0.3s; /* Smooth transition for hover effects */
+}
+
+.gallery__card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.gallery__card img {
+  width: 100%; /* Image covers the full width of the card */
+  height: 200px; /* Fixed height for consistency */
+  object-fit: cover; /* Cover the area while maintaining aspect ratio */
+}
+
+.gallery__content {
+  position: absolute; /* Position content over the image */
+  bottom: 0; /* Align to bottom of card */
+  left: 0; /* Align to left of card */
+  right: 0; /* Align to right of card */
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for content */
+  padding: 15px; /* Padding inside the card content */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Transition for fading in */
+  transform: translateY(20px); /* Slide up effect */
+}
+
+.gallery__card:hover .gallery__content {
+  opacity: 1; /* Fully visible on hover */
+  transform: translateY(0); /* Slide into place */
+}
+
+.gallery__content h4 {
+  font-size: 1.5rem; /* Font size for the card title */
+  color: #2c3e50; /* Dark color for contrast */
+  margin: 10px 0; /* Space above and below the title */
+}
+
+.gallery__content p {
+  font-size: 1rem; /* Standard font size for text */
+  color: #555; /* Grey color for text */
+  margin: 0; /* No margin for paragraph */
+}
+
+/* loadge*/
+/* Lodge Section Styling */
+.lodges {
+  padding: 80px 0;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.05), transparent);
+}
+
+.lodges__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  text-align: center;
+}
+
+.section__header {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.section__subheader {
+  font-size: 1.2rem;
+  color: #777;
+  margin-bottom: 40px;
+}
+.lodges {
+  padding: 50px 20px; /* Space around the section */
+
+}
+
+.lodges__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.05), transparent);
+}
+
+.lodges__card {
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.05), transparent);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lodges__card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.lodges__image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.lodges__card__content {
+  padding: 20px;
+}
+
+.lodges__card__content h4 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.lodges__card__content p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.lodges__btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.lodges__btn:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .section__header {
+      font-size: 2rem;
+  }
+
+  .section__subheader {
+      font-size: 1rem;
+  }
+
+  .lodges__card__content h4 {
+      font-size: 1.3rem;
+  }
+
+  .lodges__card__content p {
+      font-size: 0.9rem;
+  }
+}
+/* car hire
