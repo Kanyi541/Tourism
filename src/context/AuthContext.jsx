@@ -1,12 +1,13 @@
 // Import initialized Firebase auth instance
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { auth, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, sendEmailVerification, onAuthStateChanged, signOut } from '../services/firebase';
+import { auth, signInWithEmailAndPassword, sendEmailVerification, onAuthStateChanged, signOut, upsertUser, db } from '../services/firebase';
+import { getDoc, doc } from 'firebase/firestore';
 
 // Define admin emails (replace with real admin emails)
 const ADMIN_EMAILS = ['admin@example.com'];
 
 // Google provider (no new app initialization)
-const googleProvider = new GoogleAuthProvider();
+
 
 const AuthContext = createContext(null);
 
@@ -17,16 +18,21 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
+    const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+      if (currentUser) {
+        // Fetch user role from Firestore
+        const userDoc = await getDoc(doc(db, 'users', currentUser.uid));
+        const role = userDoc.exists() ? userDoc.data().role : 'guest';
+        setUser({ ...currentUser, role });
+      } else {
+        setUser(null);
+      }
       setLoading(false);
     });
     return unsubscribe;
   }, []);
 
-  const loginWithGoogle = async () => {
-    await signInWithPopup(auth, googleProvider);
-  };
+
 
   const loginWithEmail = async (email, password) => {
     const credential = await signInWithEmailAndPassword(auth, email, password);
@@ -45,7 +51,7 @@ export const AuthProvider = ({ children }) => {
   const value = {
     user,
     loading,
-    loginWithGoogle,
+
     loginWithEmail,
     logout,
     isAdmin: user && ADMIN_EMAILS.includes(user.email),

@@ -8,6 +8,7 @@ import {
   addDoc, 
   updateDoc, 
   deleteDoc,
+  setDoc,
   query,
   orderBy
 } from 'firebase/firestore';
@@ -85,5 +86,19 @@ export const deleteTour = async (id) => {
 };
 
 // Auth exports
-export { auth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, sendEmailVerification };
-export { db };
+export { auth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, sendEmailVerification, db };
+
+// Bookings
+export const addBooking = async (bookingData) => {
+  const docRef = await addDoc(collection(db, 'bookings'), bookingData);
+  return { id: docRef.id, ...bookingData };
+};
+// Users collection
+export const upsertUser = async (uid, userData) => {
+  const userRef = doc(db, 'users', uid);
+  await setDoc(userRef, { role: 'guest', ...userData }, { merge: true });
+  return { uid, ...userData };
+};
+
+
+

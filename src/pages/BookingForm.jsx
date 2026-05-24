@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { API_BASE_URL } from '../services/api';
+import { addBooking } from '../services/firebase';
 
 const BookingForm = () => {
   const location = useLocation();
@@ -50,23 +51,16 @@ const BookingForm = () => {
     };
 
     try {
-      const response = await fetch(`${API_BASE_URL}/bookings`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(bookingData)
-      });
-
-      if (response.ok) {
-        setSuccess(true);
-        setTimeout(() => {
-          navigate('/dashboard');
-        }, 2000);
-      } else {
-        alert('Failed to create booking. Please try again.');
-      }
+      // Store booking in Firebase Firestore
+      const result = await addBooking(bookingData);
+      console.log('Booking saved with ID:', result.id);
+      setSuccess(true);
+      setTimeout(() => {
+        navigate('/dashboard');
+      }, 2000);
     } catch (error) {
       console.error('Booking error:', error);
-      alert('Network error. Please try again.');
+      alert('Failed to create booking. Please try again.');
     } finally {
       setLoading(false);
     }
