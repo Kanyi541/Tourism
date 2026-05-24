@@ -1,30 +1,16 @@
-# Tourism Website
+# React + Vite
 
-Welcome to the **Tourism Website**! This platform is designed to showcase the beauty of travel destinations, provide detailed guides, and make it easier for users to explore and plan their trips. 
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
----
+Currently, two official plugins are available:
 
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-- **Explore Destinations**: Discover popular and hidden travel destinations with images, descriptions, and guides.
-- **Search and Filter**: Find destinations based on location, type of attraction, budget, and more.
-- **Booking Integration**: Seamlessly book hotels, tours, and activities (if applicable).
-- **Interactive Maps**: Navigate destinations with embedded maps.
-- **User Reviews**: Read and leave reviews for destinations and experiences.
-- **Multilingual Support**: Available in multiple languages for global accessibility.
+## React Compiler
 
----
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-- **Frontend**: HTML5, CSS3, JavaScript (or React/Next.js)
-- **Backend**: Node.js, Express.js (or equivalent framework)
-- **Database**: MySQL (PlanetScale)
-- **Payment Gateway**: Paystack (if bookings are available)
-- **APIs**: Google Maps API, third-party travel APIs (if applicable)
+## Expanding the ESLint configuration
 
----
-
-
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/tourism-website.git
-   cd tourism-website
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
