@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { RiSearchLine, RiMenu3Line, RiCloseLine, RiShoppingCartLine } from 'react-icons/ri';
 import { useAppStore } from '../context/AppContext';
+import { useAuth } from '../context/AuthContext';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

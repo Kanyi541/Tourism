@@ -18,6 +18,7 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   signOut,
+  sendEmailVerification,
   onAuthStateChanged
 } from 'firebase/auth';
 
@@ -84,13 +85,5 @@ export const deleteTour = async (id) => {
 };
 
 // Auth exports
-export { 
-  auth, 
-  signInWithEmailAndPassword, 
-  createUserWithEmailAndPassword,
-  signInWithPopup,
-  GoogleAuthProvider,
-  signOut, 
-  onAuthStateChanged 
-};
+export { auth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, sendEmailVerification };
 export { db };
