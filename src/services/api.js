@@ -13,3 +13,4 @@ export {
     updateTour
 } from './firebase.js';
 
+export const fetchDestinationById = (id) => fetch(`${API_BASE_URL}/api/destinations/${id}`).then(res => res.json());

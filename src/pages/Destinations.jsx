@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+
 import { useSearchParams } from 'react-router-dom';
 import DestinationCard from '../components/DestinationCard';
 import { fetchDestinations } from '../services/api';
